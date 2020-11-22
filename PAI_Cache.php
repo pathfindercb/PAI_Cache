@@ -1,13 +1,15 @@
 <?php
 // Class to cache data to a file until ttl expires
-// Copyright © 2017 Pathfinder Associates, Inc.
+// Copyright © 2017-2020 Pathfinder Associates, Inc.
 // Author Christopher Barlow
-// version 2.1
-// updated 01/17/2017
+// version 2.3
+// updated 11/11/2020
+
+namespace PAI;
 
 abstract class PAI_Cache_Abstract {
 
-	const version = "2.1";
+	const version = "2.3";
 	abstract function fetch($key);
 	abstract function store($key,$data,$ttl);
 	abstract function delete($key);
@@ -24,7 +26,7 @@ class PAI_Cache extends PAI_Cache_Abstract {
 
 		// Opening the file in read/write append mode
 		$h = fopen($this->getFileName($key),'a+');
-		if (!$h) throw new Exception('Could not write to cache');
+		if (!$h) throw new \Exception('Could not write to cache');
 
 		flock($h,LOCK_EX); // exclusive lock, will get released when the file is closed
 
@@ -40,7 +42,7 @@ class PAI_Cache extends PAI_Cache_Abstract {
 		$data = serialize(array($this->endCache,$this->setCache,$data));
 
 		if (fwrite($h,$data)===false) {
-		  throw new Exception('Could not write to cache');
+		  throw new \Exception('Could not write to cache');
 		}
 		fclose($h);
 
