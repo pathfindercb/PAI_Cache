@@ -2,21 +2,21 @@
 // Class to cache data to a file until ttl expires
 // Copyright © 2017-2020 Pathfinder Associates, Inc.
 // Author Christopher Barlow
-// version 2.3
-// updated 11/11/2020
+// version 2.4
+// updated 11/23/2020
 
-namespace PAI;
+namespace pai;
 
-abstract class PAI_Cache_Abstract {
+abstract class pai_cache_Abstract {
 
-	const version = "2.3";
+	const version = "2.4";
 	abstract function fetch($key);
 	abstract function store($key,$data,$ttl);
 	abstract function delete($key);
 
 }
 	
-class PAI_Cache extends PAI_Cache_Abstract {
+class pai_cache extends pai_cache_abstract {
 	public $fromCache = false;
 	public $setCache = 0;
 	public $endCache = 0;
