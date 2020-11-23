@@ -5,9 +5,9 @@
 // version 2.4
 // updated 11/23/2020
 
-namespace pai;
+namespace PAI;
 
-abstract class pai_cache_Abstract {
+abstract class PAI_Cache_Abstract {
 
 	const version = "2.4";
 	abstract function fetch($key);
@@ -16,7 +16,7 @@ abstract class pai_cache_Abstract {
 
 }
 	
-class pai_cache extends pai_cache_abstract {
+class PAI_Cache extends PAI_Cache_Abstract {
 	public $fromCache = false;
 	public $setCache = 0;
 	public $endCache = 0;
