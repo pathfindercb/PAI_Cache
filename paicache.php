@@ -7,7 +7,7 @@
 
 namespace pai;
 
-abstract class pai_cache_abstract {
+abstract class paicacheabstract {
 
 	const version = "2.5";
 	abstract function fetch($key);
@@ -16,7 +16,7 @@ abstract class pai_cache_abstract {
 
 }
 	
-class pai_cache extends pai_cache_abstract {
+class paicache extends paicacheabstract {
 	public $fromCache = false;
 	public $setCache = 0;
 	public $endCache = 0;
