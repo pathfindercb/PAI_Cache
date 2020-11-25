@@ -1,5 +1,5 @@
 {
-    "name": "pai/paicache",
+    "name": "pathfindercb/paicache",
     "description": "caches files to reduce database or url reads",
     "type": "library",
     "license": "MIT",
