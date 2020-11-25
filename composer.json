@@ -9,9 +9,5 @@
             "email": "cbarlow@pathfinderassociatesinc.com"
         }
     ],
-     "autoload": {
-        "psr-0": {
-            "pathfindercb\\paicache": ""
-        }
-     }
+    "require": {}
 }
