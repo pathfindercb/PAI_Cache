@@ -2,14 +2,14 @@
 // Class to cache data to a file until ttl expires
 // Copyright © 2017-2020 Pathfinder Associates, Inc.
 // Author Christopher Barlow
-// version 2.5
-// updated 11/23/2020
+// version 2.6
+// updated 11/25/2020
 
-namespace pai;
+namespace pathfindercb;
 
 abstract class paicacheabstract {
 
-	const version = "2.5";
+	const version = "2.6";
 	abstract function fetch($key);
 	abstract function store($key,$data,$ttl);
 	abstract function delete($key);
